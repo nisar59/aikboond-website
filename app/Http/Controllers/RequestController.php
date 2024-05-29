@@ -117,7 +117,7 @@ class RequestController extends Controller
             'city_id'=>'required',
             'area_id'=>'required',
             'town_id'=>'required',
-            'payment_screenshot'=>'required'
+            //'payment_screenshot'=>'required'
         ]);
             DB::beginTransaction();
          try{
