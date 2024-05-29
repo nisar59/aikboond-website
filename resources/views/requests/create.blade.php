@@ -15,7 +15,7 @@ Create Request
               <h4>Create Request</h4>
             </div>
             <div class="card-body pt-1">
-                <p class="m-1"><b>Note:</b>Rs. {{Settings()->platform_service_fee}} service fee is charged, make sure to upload Screeshot of fee payment.</p>
+<!--                 <p class="m-1"><b>Note:</b>Rs. {{Settings()->platform_service_fee}} service fee is charged, make sure to upload Screeshot of fee payment.</p>
                 <h6  class="m-1 font-weight-bold"> <u>Payment Accounts:</u></h6>
 
                 <h6  class="m-0 text-dark font-weight-bold"><i>Easypaisa:</i></h6>
@@ -26,7 +26,7 @@ Create Request
                 <p class="m-0 p-0"><b>Account Title: </b> Muhammad Javed <b>Account No: </b> 0345-6615349</p>
 
 
-                <hr>
+                <hr> -->
               <div class="row">
 
                 <div class="form-group col-md-6">
@@ -70,10 +70,10 @@ Create Request
                   </select>
                 </div>
 
-                <div class="form-group col-md-6">
+<!--                 <div class="form-group col-md-6">
                   <label>Payment Screenshot</label>
                   <input type="file" class="form-control" name="payment_screenshot">
-                </div>
+                </div> -->
 
               </div>
               <div class="card-footer text-right">

@@ -205,6 +205,11 @@ class RegisterController extends Controller
             $phone = substr_replace($phone,'92',0,1);
         }
 
+        $user=User::where(['phone'=>$phone]);
+
+        if($user->count()<1){
+            return redirect()->back()->with('error', 'There is no user registered against this phone no.');
+        }
 
         $check_verification=VerificationMsgs::where(['phone'=>$phone, 'code'=>$req->verification_code])->first();
 
