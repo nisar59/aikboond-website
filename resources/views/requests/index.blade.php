@@ -71,7 +71,7 @@ Your Requests
           <div class="card-header">
             <h4 class="col-md-6">Your Requests</h4>
             <div class="col-md-6 text-right">
-              <a class="btn btn-sm btn-success" href="{{url('requests/create')}}">+</a>
+              <a class="btn btn-sm btn-success" href="{{url('requests/create')}}">Request For Blood</a>
             </div>
           </div>
           <div class="card-body">
