@@ -2,6 +2,25 @@
 @section('title')
 Your Requests
 @endsection
+
+@section('css')
+  <style type="text/css">
+      @media (max-width: 1024px) {
+          body{
+          zoom: 0.6;
+        }
+
+        .main-content {
+                padding-left: 8px;
+                padding-right: 8px;
+                width: 100% !important;
+            }
+
+        
+      }
+  </style>
+@endsection
+
 @section('content')
 <section class="section">
   <div class="section-body">

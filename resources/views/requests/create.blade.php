@@ -77,7 +77,7 @@ Create Request
 
               </div>
               <div class="card-footer text-right">
-                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
               </div>
             </div>
           </div>

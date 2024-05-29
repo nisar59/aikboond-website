@@ -17,4 +17,5 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href="{{url('public/img/settings/'.Settings()->portal_favicon)}}" />
+  @yield('css')
 </head>

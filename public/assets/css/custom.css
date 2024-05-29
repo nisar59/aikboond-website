@@ -25,9 +25,3 @@ td{
 	position: absolute;
 	bottom: 0;
 }
-
-@media (max-width: 1024px) {
-		body{
-		zoom: 0.6;
-	}
-}
