@@ -106,6 +106,9 @@ $(document).ready( function(){
   var data_table;
   function DataTableInit(data={}) {
   data_table = $('#donors').DataTable({
+      bLengthChange: false,
+      bFilter: false,
+      bInfo: false,
       processing: true,
       serverSide: true,
       ajax: {
