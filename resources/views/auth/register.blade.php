@@ -22,8 +22,11 @@
 <body>
   <div class="loader"></div>
   <div id="app">
+    <marquee onmouseover="stop()" onmouseout="start()" style="background: #e51c25;color: white;font-size: 20px;" width="100%" direction="right">
+        @include('auth.message')
+    </marquee>
     <section class="section">
-      <div class="container mt-5">
+      <div class="container mt-2">
         <div class="row">
           <div class="col-md-12 text-center">
             <img src="{{url('/img/settings/'.Settings()->portal_favicon)}}" width="50" height="50" class="m-2">
@@ -136,6 +139,9 @@
                             <select id="area-dropdown" class="form-control select2" name="area_id">
                               <option value="">-- Select Area --</option>
                             </select>
+                                <span>
+                                    @include('auth.message')
+                                </span>
                             </div>
                         </div>
 
@@ -146,6 +152,9 @@
                               <select id="address-dropdown" class="form-control select2" name="town_id">
                                 <option value="">-- Select Address --</option>
                               </select>
+                                <span>
+                                   @include('auth.message')
+                               </span>
                             </div>
                         </div>
 

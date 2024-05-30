@@ -1,0 +1,2 @@
+
+               اگر آپ کو اپنا ایریا، گاؤں یا ایڈریس نہ ملے تو اس واٹس ایپ نمبر پہ رابطہ کریں شکریہ۔  <a target="_blank" href="https://wa.me/{{Settings()->portal_contact_no}}?text=Hi%20Admin">{{Settings()->portal_contact_no}}</a>
