@@ -16,6 +16,7 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bundles/izitoast/css/iziToast.min.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/bundles/select2/dist/css/select2.min.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href="{{url('/img/settings/'.Settings()->portal_favicon)}}" />
 </head>
 
@@ -183,7 +184,7 @@
   <script src="{{asset('assets/js/custom.js')}}"></script>
   <script src="{{asset('assets/bundles/izitoast/js/iziToast.min.js')}}"></script>
   <script src="{{asset('assets/functions.js')}}"></script>
-
+  <script src="{{asset('assets/bundles/select2/dist/js/select2.full.min.js')}}"></script>
 <script type="text/javascript">
 @if (count($errors) > 0)
       @foreach ($errors->all() as $error)
