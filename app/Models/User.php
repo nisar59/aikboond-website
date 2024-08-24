@@ -24,8 +24,8 @@ class User extends Authenticatable
      */
     protected $table='donors';
 
-    protected $fillable = ['user_id','name','phone','pin','dob','blood_group','last_donate_date','image','country_id','state_id','city_id','area_id','town_id', 'address','status'];
-    protected $with=['state', 'city','area','town'];
+    protected $fillable = ['user_id','name','phone','pin','dob','blood_group','last_donate_date','image','country_id','state_id','city_id','ucouncil_id', 'address','status'];
+    protected $with=['state', 'city'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -47,16 +47,7 @@ class User extends Authenticatable
        return $this->hasOne(Cities::class, 'id', 'city_id');
     }
 
-    public function area()
-    {
-       return $this->hasOne(Areas::class, 'id', 'area_id');
-    }
-
-    public function town()
-    {
-       return $this->hasOne(AddressesAndTowns::class, 'id', 'town_id');
-    }
-
+   
 
    public function getAuthPassword()
    {

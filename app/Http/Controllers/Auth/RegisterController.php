@@ -78,8 +78,7 @@ class RegisterController extends Controller
             'country_id'=>'required',
             'state_id'=>'required',
             'city_id'=>'required',
-            'area_id'=>'required',
-            'town_id'=>'required',
+            'ucouncil_id'=>'required',
             'address'=>'required',
         ]);
     }
@@ -95,6 +94,7 @@ class RegisterController extends Controller
             $validator = Validator::make([], []);
 
             $req= (object) $data;
+            $unioncouncil=$req->ucouncil_id;
             $phone=$req->phone;
             $phone=preg_replace('/[^0-9]/', "", $phone);
 
@@ -122,7 +122,7 @@ class RegisterController extends Controller
             }
 
             $inputs=(array) $req;
-
+            $inputs['ucouncil_id']=$unioncouncil;
             $inputs['user_id']=0;
             $inputs['phone']=$phone;
 

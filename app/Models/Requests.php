@@ -13,7 +13,7 @@ class Requests extends Model
 {
     use HasFactory;
     protected $table="requests";
-    protected $fillable=['user_id','blood_group','state_id','city_id','area_id','town_id', 'payment_screenshot', 'status'];
+    protected $fillable=['user_id','blood_group','state_id','city_id','ucouncil_id', 'payment_screenshot', 'status'];
 
 
 
@@ -27,14 +27,4 @@ class Requests extends Model
        return $this->hasOne(Cities::class, 'id', 'city_id');
     }
 
-    public function area()
-    {
-       return $this->hasOne(Areas::class, 'id', 'area_id');
-    }
-
-    public function town()
-    {
-       return $this->hasOne(AddressesAndTowns::class, 'id', 'town_id');
-    }
-    
 }

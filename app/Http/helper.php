@@ -5,7 +5,7 @@ use App\Models\Settings;
 use App\Models\Tokens;
 use App\Models\States;
 use App\Models\Cities;
-use App\Models\Areas;
+use App\Models\UnionCouncils;
 
 function FileUpload($file, $path){
 	if($file==null){return null;}
@@ -40,18 +40,12 @@ function City($id)
 		return $cities->name;
 	}
 }
-function Area($id)
+ 
+function UnionCouncil($id)
 {
-	$address=Areas::find($id);
-	if ($address!=null) {
-		return $address->name;
-	}
-}
-function Address($id)
-{
-	$area=AddressesAndTowns::find($id);
-	if ($area!=null) {
-		return $area->name;
+	$uniCoucil=UnionCouncils::find($id);
+	if ($uniCoucil!=null) {
+		return $uniCoucil->name;
 	}
 }
 

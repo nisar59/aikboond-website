@@ -48,18 +48,12 @@ class RequestController extends Controller
                     return $row->city->name;
                 }
             })
+             ->editColumn('ucouncil_id',function ($row)
+             {
+                 return UnionCouncil($row->ucouncil_id);
+             })   
 
-            ->editColumn('area_id', function ($row) {
-                if($row->area()->exists()){
-                    return $row->area->name;
-                }
-            })
-
-            ->editColumn('town_id', function ($row) {
-                if($row->town()->exists()){
-                    return $row->town->name;
-                }
-            })
+           
             ->editColumn('created_at', function ($row) {
                 return Carbon::parse($row->created_at)->format('d-m-Y');
             })
@@ -115,8 +109,7 @@ class RequestController extends Controller
             'blood_group'=>'required',
             'state_id'=>'required',
             'city_id'=>'required',
-            'area_id'=>'required',
-            'town_id'=>'required',
+            'ucouncil_id'=>'required',
             //'payment_screenshot'=>'required'
         ]);
             DB::beginTransaction();

@@ -134,10 +134,10 @@
 
 
                         <div class="row mb-3">
-                            <label for="phone" class="col-md-3 col-form-label text-md-end">{{ __('Area') }}</label>
+                            <label for="phone" class="col-md-3 col-form-label text-md-end">{{ __('Union Councils Name') }}</label>
                             <div class="col-md-9">
-                            <select id="area-dropdown" class="form-control select2" name="area_id">
-                              <option value="">-- Select Area --</option>
+                            <select id="area-dropdown" class="form-control select2" name="ucouncil_id">
+                              <option value="">-- Select Union Councils Name --</option>
                             </select>
                                 <span>
                                     @include('auth.message')
@@ -146,17 +146,7 @@
                         </div>
 
 
-                        <div class="row mb-3">
-                            <label for="phone" class="col-md-3 col-form-label text-md-end">{{ __('Address or Town') }}</label>
-                            <div class="col-md-9">
-                              <select id="address-dropdown" class="form-control select2" name="town_id">
-                                <option value="">-- Select Address --</option>
-                              </select>
-                                <span>
-                                   @include('auth.message')
-                               </span>
-                            </div>
-                        </div>
+                        
 
                         <div class="row mb-3">
                             <label for="phone" class="col-md-3 col-form-label text-md-end">{{ __('Address') }}</label>
@@ -283,14 +273,14 @@
                 error(err.statusText);
             }
         });
-        $('#area-dropdown').html('<option value="">-- Select Area --</option>');
+        $('#area-dropdown').html('<option value="">-- Select Union Councils Name --</option>');
     });
-    /*-----------------area listing-----------*/
+    /*-----------------union-council listing-----------*/
     $(document).on('change','#city-dropdown', function() {
         var city_id = this.value;
         $("#area-dropdown").html('');
         $.ajax({
-            url: "{{url('areas')}}",
+            url: "{{url('union-council')}}",
             type: "POST",
             data: {
                 city_id: city_id,
@@ -298,10 +288,10 @@
             },
             dataType: 'json',
             success: function(result) {
-                $('#area-dropdown').html('<option value="">Select Area</option>');
-                $.each(result.areas, function(key, value) {
+                $('#area-dropdown').html('<option value="">Select Union Council Name</option>');
+                $.each(result.unioncouncil, function(key, value) {
                     var selected='';
-                    if(value.id=="{{old('area_id')}}"){
+                    if(value.id=="{{old('city_id')}}"){
                         selected='selected';
                     }
                     $("#area-dropdown").append('<option '+selected+' value="' + value.id + '">' + value.name + '</option>');
@@ -315,38 +305,8 @@
                 error(err.statusText);
             }
         });
-        $('#address-dropdown').html('<option value="">-- Select Area --</option>');
-    });
-    /*Address*/
-    $(document).on('change','#area-dropdown', function() {
-        var area_id = this.value;
-        $("#address-dropdown").html('');
-        $.ajax({
-            url: "{{url('address')}}",
-            type: "POST",
-            data: {
-                area_id: area_id,
-                _token: '{{csrf_token()}}'
-            },
-            dataType: 'json',
-            success: function(result) {
-                $('#address-dropdown').html('<option value="">Select Address</option>');
-
-                $.each(result.address, function(key, value) {                
-                    var selected='';
-                    if(value.id=="{{old('town_id')}}"){
-                        selected='selected';
-                    }
-                    $("#address-dropdown").append('<option '+selected+' value="' + value.id + '">' + value.name + '</option>');
-                });
-            },
-            error: function(err) {
-                error(err.statusText);
-            }
-        });
-    });
-
-
+     });
+    
 
 
     $(document).on('click', '#get-code', function() {

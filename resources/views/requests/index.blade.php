@@ -102,8 +102,7 @@ Your Requests
                     <th>Blood Group</th>                    
                     <th>State Name</th>
                     <th>City Name</th>
-                    <th>Area</th>
-                    <th>Town Address</th>
+                    <th>Union Council Name</th>
                     <th>Status</th>
                   </tr>
                 </thead>
@@ -141,8 +140,7 @@ $(document).ready( function(){
                 {data: 'blood_group', name: 'blood_group'},
                 {data: 'state_id', name: 'state_id'},
                 {data: 'city_id', name: 'city_id'},
-                {data: 'area_id', name: 'area_id'},
-                {data: 'town_id', name: 'town_id'},
+                {data: 'ucouncil_id', name: 'ucouncil_id'},
                 {data: 'status', name: 'status'},
             ]
   });

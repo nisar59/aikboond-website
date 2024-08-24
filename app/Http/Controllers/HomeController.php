@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Countries;
 use App\Models\States;
-use App\Models\AddressesAndTowns;
-use App\Models\Cities;
-use App\Models\Areas;
+ use App\Models\Cities;
+ use App\Models\UnionCouncils;
 use App\Models\VerificationMsgs;
 use App\Models\User as Donor;
 use Throwable;
@@ -91,9 +90,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function fetchAreas(Request $req) {
+   public function fetchUnionCouncils(Request $req) {
         try{
-        $data['areas'] =Areas::where("city_id", $req->city_id)->get(["name", "id"]);                          
+        $data['unioncouncil'] =UnionCouncils::where("city_id", $req->city_id)->get(["name", "id"]);                          
         return response()->json($data);
     }
          catch(Exception $ex){
