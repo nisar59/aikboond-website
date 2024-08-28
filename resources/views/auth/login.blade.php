@@ -1,3 +1,55 @@
+<?php
+
+function get_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
+
+$servername = "localhost";
+$username = "bunqndyg_aikboond";
+$password = "bunqndyg_aikboond";
+$db = "bunqndyg_aikboond";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+
+// Check connection
+if (!$conn->connect_error) {
+ 
+}
+$ip=get_client_ip();
+$req=$_REQUEST;
+$extra_info=json_encode($req);
+$page='login';
+$dt=date("Y-m-d H:i:s");
+$day=date("Y-m-d");
+
+$sele = "SELECT * FROM visitors WHERE ip_address='{$ip}' and DATE(created_at)='{$day}' and page='{$page}'";
+$result = $conn->query($sele);
+
+if($result->num_rows<1){
+    $sql = "INSERT INTO visitors (ip_address, page,extra_info, created_at, updated_at)
+    VALUES ('{$ip}', '{$page}','{$extra_info}', '{$dt}', '{$dt}')";
+    $conn->query($sql);
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
